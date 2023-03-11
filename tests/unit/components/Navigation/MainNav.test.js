@@ -27,8 +27,8 @@ describe("MainNav", () => {
 
     const navigationMenuItems = wrapper.findAll("li");
     const navigationMenuTexts = navigationMenuItems.map((item) => item.text());
-    console.log(navigationMenuItems);
-    console.log(navigationMenuTexts);
+    // console.log(navigationMenuItems);
+    // console.log(navigationMenuTexts);
     expect(navigationMenuTexts).toEqual([
       "Teams",
       "Locations",
