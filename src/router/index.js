@@ -1,7 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-// import HomeView from "@/components/views/HomeView.vue";
-// import JobResultsView from "@/components/views/JobResultsView.vue";
-// import JobView from "@/components/views/JobView.vue";
 
 const HomeView = () => import("@/components/views/HomeView.vue");
 const JobResultsView = () =>
@@ -33,6 +30,9 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+  scrollBehavior() {
+    return { top: 0, left: 0, behavior: "smooth" };
+  },
 });
 
 export default router;

@@ -1,5 +1,5 @@
 <template>
-  <mai class="flex-auto p-8 bg-brand-gray-2">
+  <main class="flex-auto p-8 bg-brand-gray-2">
     <ol>
       <job-listing
         v-for="job in displayedJobs"
@@ -8,7 +8,29 @@
         data-test="job-listing"
       />
     </ol>
-  </mai>
+
+    <div class="mt-8 mx-auto">
+      <div class="flex flex-row flex-nowrap">
+        <p class="text-sm flex-grow">Page {{ currentPage }}</p>
+        <div class="flex items-center justify-center">
+          <router-link
+            v-if="previousPage"
+            :to="{ name: 'JobResults', query: { page: previousPage } }"
+            class="mx-3 text-sm font-semibold text-brand-blue-1"
+            data-test="previous-page-link"
+            >Previous</router-link
+          >
+          <router-link
+            v-if="nextPage"
+            :to="{ name: 'JobResults', query: { page: nextPage } }"
+            class="mx-3 text-sm font-semibold text-brand-blue-1"
+            data-test="next-page-link"
+            >Next</router-link
+          >
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
 
 <script type="module">
@@ -27,16 +49,34 @@ export default {
     };
   },
   computed: {
+    currentPage() {
+      const pageString = this.$route.query.page || "1"; //字符串
+      return Number.parseInt(pageString); //数字
+    },
+    previousPage() {
+      const previousPage = this.currentPage - 1; //
+      const firstPage = 1;
+      return previousPage >= firstPage ? previousPage : undefined;
+    },
+    nextPage() {
+      const nextPage = this.currentPage + 1;
+      const maxPage = Math.ceil(this.jobs.length / 10);
+      // console.log(this.jobs.length);
+      return nextPage <= maxPage ? nextPage : undefined;
+    },
     displayedJobs() {
-      //     const pageString = this.$route.query.page || "1"; //字符串
-      //     const pageNumber = Number.parseInt(pageString); //数字
-      //     const firstJobIndex = (pageNumber - 1) * 10;
-      //     const lastJobIndex = pageNumber * 10;
-      return this.jobs.slice(0, 10);
+      const pageNumber = this.currentPage;
+      const firstJobIndex = (pageNumber - 1) * 10; //1
+      const lastJobIndex = pageNumber * 10; //10
+      return this.jobs.slice(firstJobIndex, lastJobIndex);
     },
   },
   async mounted() {
-    const response = await axios.get("http://localhost:3000/jobs");
+    //动态值，三个环境中的一个
+    const BASE_URL = process.env.VUE_APP_API_URL;
+    // console.log(BASE_URL);
+    const response = await axios.get(BASE_URL);
+    // console.log(response);
     this.jobs = response.data;
   },
 };

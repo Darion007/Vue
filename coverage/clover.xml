@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1678557267035" clover="3.2.0">
-  <project timestamp="1678557267035" name="All files">
-    <metrics statements="147" coveredstatements="147" conditionals="18" coveredconditionals="18" methods="29" coveredmethods="29" elements="194" coveredelements="194" complexity="0" loc="147" ncloc="147" packages="5" files="10" classes="10"/>
+<coverage generated="1678678578553" clover="3.2.0">
+  <project timestamp="1678678578554" name="All files">
+    <metrics statements="153" coveredstatements="153" conditionals="22" coveredconditionals="22" methods="30" coveredmethods="30" elements="205" coveredelements="205" complexity="0" loc="153" ncloc="153" packages="5" files="10" classes="10"/>
     <package name="components.JobResults">
-      <metrics statements="37" coveredstatements="37" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9"/>
+      <metrics statements="43" coveredstatements="43" conditionals="4" coveredconditionals="4" methods="10" coveredmethods="10"/>
       <file name="JobListing.vue" path="/Users/kkda/Desktop/job-search/src/components/JobResults/JobListing.vue">
         <metrics statements="24" coveredstatements="24" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="4" count="2" type="stmt"/>
@@ -32,20 +32,26 @@
         <line num="82" count="2" type="stmt"/>
       </file>
       <file name="JobListings.vue" path="/Users/kkda/Desktop/job-search/src/components/JobResults/JobListings.vue">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="57" count="1" type="stmt"/>
-        <line num="59" count="4" type="stmt"/>
-        <line num="60" count="4" type="stmt"/>
-        <line num="61" count="4" type="stmt"/>
-        <line num="64" count="4" type="stmt"/>
-        <line num="65" count="10" type="stmt"/>
-        <line num="74" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+        <line num="93" count="16" type="stmt"/>
+        <line num="94" count="16" type="stmt"/>
+        <line num="95" count="16" type="stmt"/>
+        <line num="96" count="50" type="stmt"/>
+        <line num="112" count="8" type="stmt"/>
+        <line num="125" count="4" type="stmt"/>
+        <line num="128" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.JobSearch">
